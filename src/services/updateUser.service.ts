@@ -2,6 +2,7 @@ import AppDataSource from "../data-source";
 import { User } from "../entities/user.entity";
 import { IUserUpdate } from "../interfaces/users";
 import { hash } from "bcrypt";
+import AppError from "../errors/appError";
 
 const updateUSerService = async ({name, email, password}: IUserUpdate, id: string): Promise<User> => {
     const userRepository = AppDataSource.getRepository(User);
@@ -11,7 +12,7 @@ const updateUSerService = async ({name, email, password}: IUserUpdate, id: strin
     })
 
     if (!findUser) {
-        throw new Error("User not found")
+        throw new AppError("User not found", 404)
     }
 
     await userRepository.update(

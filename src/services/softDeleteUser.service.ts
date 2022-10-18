@@ -1,5 +1,6 @@
 import AppDataSource from "../data-source";
 import { User } from "../entities/user.entity";
+import AppError from "../errors/appError";
 
 const softDeleteUSerService = async (id: string) => {
     const userRepository = AppDataSource.getRepository(User);
@@ -7,7 +8,7 @@ const softDeleteUSerService = async (id: string) => {
         id
     })
 if (!findUser?.isActive) {
-        throw new Error("User not found")
+        throw new AppError("User not found")
     }
 
     const responseSoftDelete = await userRepository.update(

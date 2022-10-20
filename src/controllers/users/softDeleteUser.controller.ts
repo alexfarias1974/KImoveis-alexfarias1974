@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { User } from "../entities/user.entity";
-import softDeleteUSerService from "../services/softDeleteUser.service";
+import { User } from "../../entities/user.entity";
+import softDeleteUSerService from "../../services/users/softDeleteUser.service";
 
 const softDeleteUserController = async (req: Request, res: Response) => {
 

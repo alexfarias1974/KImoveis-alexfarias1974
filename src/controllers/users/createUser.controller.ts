@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { IUserRequest } from "../interfaces/users";
+import { IUserRequest } from "../../interfaces/users";
 import { instanceToPlain } from "class-transformer";
-import createUserService from "../services/createUser.service";
+import createUserService from "../../services/users/createUser.service";
 
 const createUserController = async (req: Request, res: Response) => {
     

@@ -1,8 +1,8 @@
-import AppDataSource from "../data-source";
-import { User } from "../entities/user.entity";
-import { IUserUpdate } from "../interfaces/users";
+import AppDataSource from "../../data-source";
+import { User } from "../../entities/user.entity";
+import { IUserUpdate } from "../../interfaces/users";
 import { hash } from "bcrypt";
-import AppError from "../errors/appError";
+import AppError from "../../errors/appError";
 
 const updateUSerService = async ({name, email, password}: IUserUpdate, id: string): Promise<User> => {
     const userRepository = AppDataSource.getRepository(User);

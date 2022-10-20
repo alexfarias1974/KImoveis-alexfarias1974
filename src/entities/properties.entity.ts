@@ -1,5 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToOne, JoinColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToOne, OneToMany, JoinColumn, ManyToOne } from "typeorm";
 import { Address } from "./addresses.entity";
+import { Category } from "./categories.entity";
+import { ScheduleUSerProperty } from "./schedules_user_properties.entity";
 
 @Entity("properties")
 export class Property{
@@ -24,4 +26,10 @@ export class Property{
 
     @OneToOne(() => Address) @JoinColumn()
     address: Address
+
+    @ManyToOne(() => Category)
+    category: Category
+
+    @OneToMany(() => ScheduleUSerProperty, scheduleUSerProperty => scheduleUSerProperty.property)
+    scheduleUSerProperty: ScheduleUSerProperty[]
 }

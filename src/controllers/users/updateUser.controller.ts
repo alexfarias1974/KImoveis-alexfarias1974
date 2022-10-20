@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { IUserUpdate } from "../interfaces/users";
-import { User } from "../entities/user.entity";
-import updateUSerService from "../services/updateUser.service";
+import { IUserUpdate } from "../../interfaces/users";
+import { User } from "../../entities/user.entity";
+import updateUSerService from "../../services/users/updateUser.service";
 
 const updateUserController = async (req: Request, res: Response) => {
 

@@ -1,6 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, JoinColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
 import { Property } from "./properties.entity";
-import { User } from "./user.entity";
 
 @Entity("categories")
 export class Category{
@@ -12,5 +11,5 @@ export class Category{
     name: string
 
     @OneToMany(() => Property, property => property.category)
-    category: Category[]
+    properties: Property[]
 }

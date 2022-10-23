@@ -31,5 +31,5 @@ export class Property{
     category: Category
 
     @OneToMany(() => ScheduleUSerProperty, scheduleUSerProperty => scheduleUSerProperty.property)
-    scheduleUSerProperty: ScheduleUSerProperty[]
+    schedules: ScheduleUSerProperty[]
 }

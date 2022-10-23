@@ -4,6 +4,7 @@ import listCategoriesService from "../../services/categories/listCategories.serv
 
 const listCategoriesController = async (req: Request, res: Response) => {
     const categories = await listCategoriesService();
+    console.log(categories)
     return res.json(instanceToPlain(categories));
 }
 

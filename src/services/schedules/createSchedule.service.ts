@@ -5,7 +5,7 @@ import { User } from "../../entities/user.entity";
 import AppError from "../../errors/appError";
 import {IScheduleRequest} from "../../interfaces/schedules"
 
-const createScheduleService = async ({userId, propertyId, date, hour}: IScheduleRequest): Promise<ScheduleUSerProperty> => {
+const createScheduleService = async ({userId, propertyId, date, hour}: IScheduleRequest) => {
     const scheduleRepository = AppDataSource.getRepository(ScheduleUSerProperty);
     const idUserRepository = AppDataSource.getRepository(User);
     const idPropertyRepository = AppDataSource.getRepository(Property)
@@ -15,7 +15,7 @@ const createScheduleService = async ({userId, propertyId, date, hour}: ISchedule
     })
 
     if(!usersId){
-        throw new AppError("User not found")
+        throw new AppError("User not found", 404)
     }
 
     const propertiesId = await idPropertyRepository.findOneBy({
@@ -23,7 +23,7 @@ const createScheduleService = async ({userId, propertyId, date, hour}: ISchedule
     })
 
     if(!propertiesId){
-        throw new AppError("User not found")
+        throw new AppError("User not found", 404)
     }
 
     const dateSchedule = new Date(`${date} ${hour}`)
@@ -57,7 +57,7 @@ const createScheduleService = async ({userId, propertyId, date, hour}: ISchedule
 
     await scheduleRepository.save(schedule);
 
-    return schedule;
+    return {message: "Schedule created!"};
 };
 
 export default createScheduleService;

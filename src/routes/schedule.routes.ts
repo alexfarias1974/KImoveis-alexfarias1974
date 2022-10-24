@@ -6,7 +6,7 @@ import isAdmValidatorMiddleware from "../middlewares/isAdmValidator.middleware";
 
 const scheduleRoutes = Router();
 
-scheduleRoutes.post("", createScheduleController);
+scheduleRoutes.post("", getAuthMiddleware, createScheduleController);
 scheduleRoutes.get("/properties/:id", getAuthMiddleware, isAdmValidatorMiddleware, listSchedulesInPropertyController);
 
 export default scheduleRoutes;

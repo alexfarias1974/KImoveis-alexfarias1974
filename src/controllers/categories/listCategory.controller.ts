@@ -1,11 +1,9 @@
 import { Request, Response } from "express";
-import { instanceToPlain } from "class-transformer";
 import listCategoriesService from "../../services/categories/listCategories.service";
 
 const listCategoriesController = async (req: Request, res: Response) => {
     const categories = await listCategoriesService();
-    console.log(categories)
-    return res.json(instanceToPlain(categories));
+    return res.json(categories);
 }
 
 export default listCategoriesController;

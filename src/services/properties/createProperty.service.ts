@@ -49,7 +49,7 @@ const createPropertyService = async ({value, size, categoryId, address}: IProper
     const property = await propertyRepository.save({
         value,
         size,
-        categoryId: categories,
+        category: categories,
         address: newAddress
         })
         

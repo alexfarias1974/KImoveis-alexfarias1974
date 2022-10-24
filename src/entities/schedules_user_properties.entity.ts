@@ -17,6 +17,6 @@ export class ScheduleUSerProperty{
     @ManyToOne(() => Property)
     property: Property["id"]
 
-    @ManyToOne(() => User)
+    @ManyToOne(() => User, {eager: true})
     user: User["id"]
 }

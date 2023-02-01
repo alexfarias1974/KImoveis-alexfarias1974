@@ -1,4 +1,4 @@
-# S5-19 | 🏁 Entrega: KImóveis - TypeORM com Relacionamentos
+KImóveis - TypeORM com Relacionamentos
 
 Para inciar este projeto, é necessário instalar as dependências, que serão utilizadas nos testes. Portanto utilize o comando abaixo para instalar tais dependências:
 
@@ -23,9 +23,9 @@ npm install --global yarn
 <br>
 
 
-Essa entrega já está com o Docker configurado, basta preencher as variáveis de ambiente no .env
+Esse projeto já está com o Docker configurado, basta preencher as variáveis de ambiente no .env
 
-Basta buildar e subir nossos containers usando o comando padrão:
+Basta buildar e subir os containers usando o comando padrão:
 ````
 docker-compose up --build
 ````
@@ -78,7 +78,7 @@ yarn test --all
 #
 
 ### Rodar os testes de uma pasta específica
-`detalhe: repare que tests está envolvido por 2 underlines. Isso se chama dunder.`
+`detalhe: repare que tests está envolvido por 2 underlines (dunder).`
 ````
 yarn test ./scr/__tests__/integration/<subpasta>
 ````

@@ -111,4 +111,4 @@ Após rodar um dos comandos aparecerá um log no seu terminal, contendo as infor
 
 
 
-### Agora que já sabe como iniciar o seu projeto e rodar os testes, é hora de colocar a mão no código!
+### Agora que já sabe como iniciar o projeto e rodar os testes, é hora da diversão!
